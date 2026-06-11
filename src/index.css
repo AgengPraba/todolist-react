@@ -36,17 +36,17 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Neobrutalism also applies to dark mode - maintain pure black/white contrast */
-    --text: #ffffff;
-    --text-h: #ffffff;
-    --bg: #000000;
-    --border: #ffffff;
-    --code-bg: #1a1a1a;
+    --text: #000000;
+    --text-h: #000000;
+    --bg: #ffffff;
+    --border: #000000;
+    --code-bg: #f0f0f0;
     --accent: #ffff00;
     --accent-secondary: #ff1493;
     --accent-bg: rgba(255, 255, 0, 0.1);
-    --accent-border: #ffffff;
-    --social-bg: #000000;
-    --hard-shadow: 4px 4px 0px #ffffff;
+    --accent-border: #000000;
+    --social-bg: #ffffff;
+    --hard-shadow: 4px 4px 0px #000000;
   }
 
   #social .button-icon {
