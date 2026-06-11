@@ -1,421 +1,120 @@
-TODOLIST APP
+# TODOLIST APP
 
-Aplikasi manajemen tugas todo list yang dibangun dengan React dan TypeScript. Aplikasi ini menyediakan antarmuka yang intuitif untuk menambah, mengedit, dan melacak status penyelesaian tugas Anda dengan penyimpanan data yang persisten di browser.
+A task management application built with React and TypeScript. This application provides an intuitive interface for adding, managing, and tracking the completion status of your tasks, with persistent data storage in the browser.
 
+## KEY FEATURES
 
-FITUR UTAMA
+### 1. Todo Task Management
 
-1. Manajemen Tugas Todo
-   - Tambah todo baru dengan deskripsi tugas
-   - Tandai tugas sebagai selesai atau belum selesai
-   - Hapus tugas individual dari daftar
-   - Validasi input untuk memastikan deskripsi tidak kosong
+* Add new todo tasks with task descriptions
+* Mark tasks as completed or active
+* Delete individual tasks from the list
+* Input validation to ensure task descriptions are not empty
 
-2. Sistem Filter Canggih
-   - Tampilkan semua tugas (All)
-   - Tampilkan hanya tugas yang belum selesai (Active)
-   - Tampilkan hanya tugas yang sudah selesai (Completed)
-   - Filter dapat diubah kapan saja tanpa kehilangan data
+### 2. Advanced Filtering System
 
-3. Manajemen Tugas Selesai
-   - Tombol untuk menghapus semua tugas yang sudah selesai sekaligus
-   - Hanya muncul ketika ada minimal satu tugas yang selesai
-   - Operasi yang aman dengan konfirmasi visual
+* View all tasks (All)
+* View only active tasks (Active)
+* View only completed tasks (Completed)
+* Filters can be switched at any time without losing data
 
-4. Penyimpanan Data Persisten
-   - Semua tugas disimpan otomatis di localStorage browser
-   - Data tetap tersimpan bahkan setelah menutup atau menyegarkan halaman
-   - Penanganan error yang robust jika penyimpanan gagal
+### 3. Completed Task Management
 
-5. Interface Responsif
-   - Desain yang bersih dan user-friendly
-   - Input form dengan validasi real-time
-   - Daftar tugas yang mudah dibaca
-   - Kontrol filter yang jelas dan mudah diakses
+* Button to clear all completed tasks at once
+* Only appears when there is at least one completed task
+* Safe operation with visual feedback
 
+### 4. Persistent Data Storage
 
-INSTALASI
+* All tasks are automatically saved in the browser's localStorage
+* Data remains available even after closing or refreshing the page
+* Robust error handling if storage operations fail
 
-Prasyarat Sistem
+### 5. Responsive Interface
 
-Pastikan Anda telah menginstal:
-- Node.js versi 16 atau lebih tinggi
-- npm atau yarn sebagai package manager
+* Clean and user-friendly design
+* Input form with real-time validation
+* Easy-to-read task list
+* Clear and accessible filter controls
 
-Langkah Instalasi
+## INSTALLATION
 
-1. Clone atau unduh proyek ini
-   git clone <repository-url>
-   cd todolist-app
+### System Requirements
 
-2. Instal dependencies
-   npm install
+Make sure you have installed:
 
-3. Jalankan aplikasi dalam mode development
-   npm run dev
+* Node.js version 16 or higher
+* npm or yarn as the package manager
 
-   Aplikasi akan tersedia di http://localhost:5173
+### Installation Steps
 
-4. Untuk membuat build production
-   npm run build
+1. Clone or download this project
 
-5. Preview build production
-   npm run preview
+```bash
+git clone https://github.com/AgengPraba/todolist-react.git
+cd todolist-app
+```
 
+2. Install dependencies
 
-PERINTAH TERSEDIA
+```bash
+npm install
+```
 
+3. Run the application in development mode
+
+```bash
 npm run dev
-Menjalankan server development dengan HMR (Hot Module Replacement) untuk pengembangan yang cepat.
+```
 
+The application will be available at:
+
+```text
+http://localhost:5173
+```
+
+4. Create a production build
+
+```bash
 npm run build
-Melakukan kompilasi TypeScript dan membuat bundle production yang dioptimalkan menggunakan Vite.
+```
 
-npm run lint
-Menjalankan ESLint untuk memeriksa kualitas code dan mendeteksi potensi masalah.
+5. Preview the production build
 
-npm run test
-Menjalankan unit tests menggunakan Vitest dengan mode watch.
-
-npm run test:ui
-Menjalankan tests dengan antarmuka grafis Vitest UI untuk visualisasi yang lebih baik.
-
+```bash
 npm run preview
-Menampilkan preview dari build production secara lokal sebelum deploy.
+```
 
+## USAGE
 
-STRUKTUR FOLDER
+### 1. Adding a New Todo
 
-src/
-  App.tsx
-    Komponen utama aplikasi yang mengelola state dan koordinasi antar komponen.
-  
-  App.css
-    Styling untuk komponen utama aplikasi.
+* Type a task description into the input field
+* Click the **"Add"** button or press **Enter**
+* The new task will appear in the list
 
-  main.tsx
-    Entry point aplikasi React.
+### 2. Marking a Task as Completed
 
-  index.css
-    Styling global untuk seluruh aplikasi.
+* Click the checkbox next to a task to mark it as completed
+* Completed tasks will be displayed with different styling
+* Click again to mark the task as active
 
-  components/
-    Komponen React yang dapat digunakan kembali.
-    
-    TodoInputForm.tsx
-      Form input untuk menambah tugas baru.
-    
-    TodoList.tsx
-      Komponen untuk menampilkan daftar tugas.
-    
-    TodoItem.tsx
-      Komponen individual todo dengan kontrol toggle dan delete.
-    
-    FilterControls.tsx
-      Komponen untuk mengubah filter tampilan tugas.
-    
-    ClearCompletedButton.tsx
-      Tombol untuk menghapus semua tugas yang selesai.
-    
-    [nama-komponen].css
-      File styling untuk masing-masing komponen.
-    
-    [nama-komponen].test.tsx
-      Unit tests untuk setiap komponen.
+### 3. Deleting a Task
 
-  store/
-    TodoStore.ts
-      Class untuk manajemen state aplikasi dan logika bisnis.
-    
-    TodoStore.test.ts
-      Unit tests untuk TodoStore.
+* Click the delete button (delete icon) next to the task you want to remove
+* The task will be immediately removed from the list
 
-  repository/
-    TodoRepository.ts
-      Class untuk persistensi data ke localStorage.
-    
-    TodoRepository.test.ts
-      Unit tests untuk TodoRepository.
+### 4. Using Filters
 
-  types/
-    index.ts
-      Definisi interface TypeScript untuk Todo dan Filter.
-    
-    index.test.ts
-      Unit tests untuk type definitions.
+* Click the **"All"** tab to view all tasks
+* Click the **"Active"** tab to view only active tasks
+* Click the **"Completed"** tab to view only completed tasks
 
-  test/
-    setup.ts
-      Konfigurasi setup untuk testing environment.
+### 5. Clearing All Completed Tasks
 
-  assets/
-    File asset statis seperti gambar dan icon.
+* Click the **"Clear Completed"** button to remove all completed tasks
+* This button will only appear when there are completed tasks
 
-public/
-  File publik yang dilayani tanpa diproses oleh Vite.
-  
-  favicon.svg
-    Icon favorit aplikasi.
-  
-  icons.svg
-    SVG icons yang digunakan di aplikasi.
+## LICENSE
 
-Root Files
-
-index.html
-  Template HTML utama untuk aplikasi.
-
-vite.config.ts
-  Konfigurasi Vite untuk development dan build.
-
-vitest.config.ts
-  Konfigurasi Vitest untuk testing.
-
-tsconfig.json
-  Konfigurasi TypeScript umum.
-
-tsconfig.app.json
-  Konfigurasi TypeScript spesifik untuk aplikasi.
-
-tsconfig.node.json
-  Konfigurasi TypeScript untuk file konfigurasi Node.
-
-eslint.config.js
-  Konfigurasi ESLint untuk quality assurance code.
-
-package.json
-  Metadata proyek dan dependencies.
-
-package-lock.json
-  Lock file untuk reproducible builds.
-
-
-TEKNOLOGI YANG DIGUNAKAN
-
-Framework dan Library
-
-React (19.2.6)
-  Library JavaScript untuk membangun user interface dengan component-based architecture.
-
-React DOM (19.2.6)
-  Package untuk rendering React components ke DOM browser.
-
-Build Tools
-
-Vite (8.0.12)
-  Build tool modern yang menyediakan fast development server dengan HMR.
-
-Vitejs Plugin React (6.0.1)
-  Plugin Vite untuk integrasi seamless dengan React menggunakan Oxc compiler.
-
-Type Safety
-
-TypeScript (6.0.2)
-  Superset JavaScript yang menambahkan static type checking.
-
-Testing
-
-Vitest (4.1.8)
-  Unit test framework yang cepat dan kompatibel dengan Vite.
-
-Vitest UI (4.1.8)
-  Graphical interface untuk Vitest untuk visualisasi test results.
-
-Testing Library (16.3.2)
-  Library untuk testing React components dengan focus pada user behavior.
-
-Testing Library DOM (6.9.1)
-  Library untuk assertions DOM dalam testing.
-
-Testing Library User Event (14.6.1)
-  Library untuk simulasi user interactions dalam tests.
-
-Fast Check (4.8.0)
-  Property-based testing library untuk comprehensive test coverage.
-
-Fast Check Vitest (0.4.1)
-  Integrasi Fast Check dengan Vitest.
-
-Code Quality
-
-ESLint (10.3.0)
-  Linter untuk mengidentifikasi dan melaporkan code patterns yang problematis.
-
-ESLint JS (10.0.1)
-  Plugin ESLint untuk best practices JavaScript.
-
-TypeScript ESLint (8.59.2)
-  Plugin ESLint untuk TypeScript support.
-
-React Hooks ESLint (7.1.1)
-  Plugin ESLint untuk React Hooks best practices.
-
-React Refresh ESLint (0.5.2)
-  Plugin ESLint untuk Vite React Refresh integration.
-
-Utilities
-
-UUID (14.0.0)
-  Library untuk generate unique identifiers untuk setiap todo.
-
-JSDOM (29.1.1)
-  JavaScript implementation dari DOM untuk testing environment.
-
-Globals (17.6.0)
-  ESLint config helper untuk global variables.
-
-Development
-
-Vite (8.0.12)
-  Modern frontend build tool dan dev server.
-
-Vite Plugin React (6.0.1)
-  React plugin untuk Vite.
-
-Vitejs Plugin React (6.0.1)
-  Official React plugin untuk Vite.
-
-Node Types (24.12.3)
-  TypeScript type definitions untuk Node.js APIs.
-
-React Types (19.2.14)
-  TypeScript type definitions untuk React.
-
-React DOM Types (19.2.3)
-  TypeScript type definitions untuk React DOM.
-
-
-CARA PENGGUNAAN
-
-1. Menambah Todo Baru
-   - Ketik deskripsi tugas di input form
-   - Klik tombol "Add" atau tekan Enter
-   - Tugas baru akan muncul di daftar
-
-2. Menandai Tugas Selesai
-   - Klik checkbox di sebelah tugas untuk tandai sebagai selesai
-   - Tugas yang selesai akan ditampilkan dengan styling berbeda
-   - Klik lagi untuk menandai sebagai belum selesai
-
-3. Menghapus Tugas
-   - Klik tombol hapus (delete icon) di sebelah tugas yang ingin dihapus
-   - Tugas akan langsung dihapus dari daftar
-
-4. Menggunakan Filter
-   - Klik tab "All" untuk melihat semua tugas
-   - Klik tab "Active" untuk melihat hanya tugas yang belum selesai
-   - Klik tab "Completed" untuk melihat hanya tugas yang sudah selesai
-
-5. Menghapus Semua Tugas Selesai
-   - Klik tombol "Clear Completed" untuk menghapus semua tugas yang sudah selesai
-   - Tombol ini hanya akan muncul ketika ada tugas yang selesai
-
-
-STRUKTUR KOMPONEN
-
-Arsitektur aplikasi mengikuti pola yang terstruktur:
-
-App (Root Component)
-  - Mengelola state global dengan React hooks
-  - Mengoordinasikan komunikasi antar komponen
-  - Mengelola TodoStore instance
-
-TodoStore
-  - Business logic untuk todo operations
-  - Filter management
-  - Komunikasi dengan TodoRepository
-
-TodoRepository
-  - Persistensi data ke localStorage
-  - Serialization dan deserialization
-
-UI Components
-  - TodoInputForm: Input dan validasi tugas baru
-  - TodoList: Container untuk daftar tugas
-  - TodoItem: Item individual dengan kontrol
-  - FilterControls: Kontrol untuk filter
-  - ClearCompletedButton: Tombol untuk clear completed
-
-
-TESTING
-
-Aplikasi ini dilengkapi dengan comprehensive test suite menggunakan Vitest dan Testing Library.
-
-Menjalankan Tests
-
-npm run test
-  Menjalankan semua tests dalam mode watch.
-
-npm run test:ui
-  Membuka Vitest UI untuk visualisasi tests.
-
-Coverage Testing
-
-Tests mencakup:
-- Unit tests untuk komponen React
-- Unit tests untuk business logic (TodoStore)
-- Unit tests untuk persistensi (TodoRepository)
-- Property-based tests untuk edge cases
-- Type definitions tests
-
-
-TROUBLESHOOTING
-
-Masalah: Build gagal dengan error TypeScript
-
-Solusi: Pastikan semua types sudah benar dengan menjalankan:
-  npm run build
-
-Masalah: Data tidak tersimpan setelah refresh
-
-Solusi: Periksa bahwa localStorage tidak diblokir di browser settings. Lihat console untuk error messages.
-
-Masalah: Tests gagal
-
-Solusi: Pastikan dependencies terinstall dengan menjalankan:
-  npm install
-  npm run test
-
-
-KONTRIBUSI
-
-Untuk berkontribusi pada proyek ini:
-
-1. Pastikan code mengikuti ESLint rules
-   npm run lint
-
-2. Jalankan tests untuk memastikan tidak ada regresi
-   npm run test
-
-3. Buat pull request dengan deskripsi yang jelas tentang perubahan
-
-
-LISENSI
-
-Proyek ini tersedia di bawah lisensi MIT. Silakan lihat file LICENSE untuk detail lebih lanjut.
-
-
-INFORMASI TAMBAHAN
-
-Development Server
-
-Aplikasi menggunakan Vite dev server yang mendukung:
-- Hot Module Replacement (HMR) untuk instant updates saat development
-- Fast refresh untuk React components
-- Instant server start
-
-Build Output
-
-Build production menghasilkan:
-- Minimized dan optimized bundle
-- Separated CSS file untuk better caching
-- Source maps untuk debugging production issues
-
-Browser Compatibility
-
-Aplikasi kompatibel dengan semua modern browsers yang mendukung:
-- ES2020 JavaScript features
-- localStorage API
-- Standard DOM APIs
-
-# todolist-react
+This project is available under the MIT License. Please refer to the LICENSE file for more details.
